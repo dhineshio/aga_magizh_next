@@ -45,8 +45,8 @@ export default function HeroCarousel() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="relative w-full h-full">
-      <div className="overflow-hidden h-full rounded-lg" ref={emblaRef}>
+    <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-full">
+      <div className="overflow-hidden h-full" ref={emblaRef}>
         <div className="flex h-full">
           {slides.map((slide) => (
             <div
@@ -64,15 +64,15 @@ export default function HeroCarousel() {
       </div>
 
       {/* Indicators */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => emblaApi?.scrollTo(index)}
             className={`transition-all duration-300 rounded-full ${
               index === selectedIndex
-                ? 'w-8 h-2 bg-secondary'
-                : 'w-2 h-2 bg-white/50 hover:bg-white/80'
+                ? 'w-6 sm:w-8 h-1.5 sm:h-2 bg-secondary'
+                : 'w-1.5 sm:w-2 h-1.5 sm:h-2 bg-white/50 hover:bg-white/80'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

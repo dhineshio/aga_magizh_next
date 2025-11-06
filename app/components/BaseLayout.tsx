@@ -113,7 +113,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
             <div className="flex items-center gap-2">
               <img src="./logo.png" alt="Logo" className='h-[64px] w-[64px] lg:h-[100px] lg:w-[100px]' />
               <div>
-                <h1 className="text-base md:text-xl lg:text-2xl tracking-tighter text-primary font-bold">AGA MAGIZH TRUST</h1>
+                <h1 className="text-base md:text-xl lg:text-2xl tracking-tighter text-primary font-extrabold">AGA MAGIZH TRUST</h1>
                 <p className="text-xs md:text-sm text-gray-500">Reg No : 47/20</p>
               </div>
             </div>
