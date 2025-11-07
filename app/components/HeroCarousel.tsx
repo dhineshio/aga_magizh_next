@@ -7,17 +7,17 @@ import Autoplay from 'embla-carousel-autoplay';
 const slides = [
   {
     id: 1,
-    image: '/slide_01.png',
+    image: './slide_01.png',
     alt: 'Children receiving support'
   },
   {
     id: 2,
-    image: '/slide_02.png',
+    image: './slide_02.png',
     alt: 'Community volunteering'
   },
   {
     id: 3,
-    image: '/slide_03.png',
+    image: './slide_03.png',
     alt: 'Education programs'
   }
 ];
