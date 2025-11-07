@@ -19,7 +19,7 @@ export default function Home() {
                 Help make a difference
               </p>
               <p 
-                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-nunito  font-bold leading-16"
+                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-nunito  font-bold lg:leading-16"
                 data-aos="fade-right"
                 data-aos-delay="200"
               >
@@ -108,14 +108,16 @@ export default function Home() {
       {/* End Hero Section */}
 
       {/* Our Work Section */}
-      <section className="container mx-auto py-12 px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-xl md:text-3xl font-bold font-nunito text-gray-800 mb-2">
+      <section className="container mx-auto pt-6 pb-24 px-4">
+        <div className="text-center mb-12" data-aos="fade-up" data-aos-duration="800">
+          <h2 className="text-xl md:text-3xl font-extrabold font-nunito text-gray-800 mb-2">
             Our Work
           </h2>
           <div className="w-24 h-0.5 bg-[#fe5429] mx-auto"></div>
         </div>
-        <OurWorkCarousel />
+        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+          <OurWorkCarousel />
+        </div>
       </section>
     </main>
   );

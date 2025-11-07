@@ -7,70 +7,87 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const workCards = [
   {
     id: 1,
-    title: 'Education for All',
-    description: 'Providing quality education to underprivileged children and helping them build a brighter future.',
-    image: '/slide_01.png',
-    category: 'Education'
+    title: 'Rescue Homeless',
+    description: 'Providing shelter and support to help homeless individuals thrive.',
+    image: './works/homeless_rescue.jpeg',
+    icon: './icons/ic_homeless.svg',
+    borderColor: 'border-red-500',
+    bgColor: 'bg-red-500',
   },
   {
     id: 2,
-    title: 'Healthcare Services',
-    description: 'Delivering essential medical care and health services to communities in need.',
-    image: '/slide_02.png',
-    category: 'Healthcare'
+    title: 'Food Support',
+    description: 'Delivering nutritious meals to families facing hunger and need.',
+    image: './works/food_help.jpeg',
+    icon: './icons/ic_food_support.svg',
+    borderColor: 'border-blue-500',
+    bgColor: 'bg-blue-500',
   },
   {
     id: 3,
-    title: 'Food Security',
-    description: 'Ensuring no one goes hungry by providing nutritious meals to those facing food insecurity.',
-    image: '/slide_03.png',
-    category: 'Food Aid'
+    title: 'Grocery Support',
+    description: 'Providing essential groceries and supplies to families in need.',
+    image: './works/grocery_help.jpeg',
+    icon: './icons/ic_grocery_support.svg',
+    borderColor: 'border-green-500',
+    bgColor: 'bg-green-500',
   },
   {
     id: 4,
-    title: 'Clean Water Initiative',
-    description: 'Bringing clean and safe drinking water to remote villages and underserved areas.',
-    image: '/slide_01.png',
-    category: 'Water'
+    title: 'Education Support',
+    description: 'Empowering children with quality education and learning resources.',
+    image: './works/education_help.jpeg',
+    icon: './icons/ic_education_support.svg',
+    borderColor: 'border-purple-500',
+    bgColor: 'bg-purple-500',
   },
   {
     id: 5,
-    title: 'Shelter & Housing',
-    description: 'Building safe homes and providing shelter for families affected by disasters and poverty.',
-    image: '/slide_02.png',
-    category: 'Housing'
+    title: 'Tree Plantation',
+    description: 'Planting trees and creating green spaces for a sustainable environment.',
+    image: './works/tree_plantation.jpg',
+    icon: './icons/ic_tree_plantation.svg',
+    borderColor: 'border-emerald-500',
+    bgColor: 'bg-emerald-500',
   },
   {
     id: 6,
-    title: 'Women Empowerment',
-    description: 'Empowering women through skill development, education, and economic opportunities.',
-    image: '/slide_03.png',
-    category: 'Empowerment'
+    title: 'Awareness Program',
+    description: 'Conducting campaigns to raise health and community awareness.',
+    image: './works/awarness_program.jpeg',
+    icon: './icons/ic_awarness_program.svg',
+    borderColor: 'border-pink-500',
+    bgColor: 'bg-pink-500',
   },
   {
     id: 7,
-    title: 'Child Welfare',
-    description: 'Protecting children\'s rights and ensuring their safety, health, and well-being.',
-    image: '/slide_01.png',
-    category: 'Children'
+    title: 'Awards',
+    description: 'Recognizing excellence and dedication in community service and social impact.',
+    image: './works/awards.jpeg',
+    icon: './icons/ic_awards.svg',
+    borderColor: 'border-amber-500',
+    bgColor: 'bg-amber-500',
   },
   {
     id: 8,
-    title: 'Disaster Relief',
-    description: 'Providing immediate assistance and support to communities affected by natural disasters.',
-    image: '/slide_02.png',
-    category: 'Emergency'
+    title: 'Branch Office',
+    description: 'Expanding our reach through new branches to serve more communities.',
+    image: './works/branch_office.jpeg',
+    icon: './icons/ic_office_branch.svg',
+    borderColor: 'border-cyan-500',
+    bgColor: 'bg-cyan-500',
   }
 ];
 
 export default function OurWorkCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: 'start', slidesToScroll: 1 }
+    { loop: false, align: 'start' }
   );
   
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -87,8 +104,14 @@ export default function OurWorkCarousel() {
     setCanScrollNext(emblaApi.canScrollNext());
   }, [emblaApi]);
 
+  const onInit = useCallback(() => {
+    if (!emblaApi) return;
+    setScrollSnaps(emblaApi.scrollSnapList());
+  }, [emblaApi]);
+
   useEffect(() => {
     if (!emblaApi) return;
+    onInit();
     onSelect();
     emblaApi.on('select', onSelect);
     emblaApi.on('reInit', onSelect);
@@ -96,7 +119,7 @@ export default function OurWorkCarousel() {
       emblaApi.off('select', onSelect);
       emblaApi.off('reInit', onSelect);
     };
-  }, [emblaApi, onSelect]);
+  }, [emblaApi, onInit, onSelect]);
 
   return (
     <div className="relative w-full">
@@ -107,23 +130,29 @@ export default function OurWorkCarousel() {
               key={card.id}
               className="flex-[0_0_100%] sm:flex-[0_0_45%] lg:flex-[0_0_25%] min-w-0"
             >
-              <div className="h-[450px] border-2 border-gray-200 flex flex-col rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 bg-white">
-                <div className="h-[250px] relative overflow-hidden">
+              <div className="h-[470px] border-2 border-primary/30 flex flex-col relative rounded-2xl overflow-hidden hover:shadow-2xl shadow-secondary/20 transition-all duration-300 bg-white select-none">
+                <div className={`absolute top-[48%] z-10 rounded-full left-[50%] p-2 border border-dotted ${card.borderColor} transform -translate-x-1/2 -translate-y-1/2`}>
+                <div className={`rounded-full ${card.bgColor} h-20 w-20 p-5 flex items-center justify-center`}>
+                  <img src={card.icon} alt="icon" className="h-full w-full" />
+                </div>
+                </div>
+                <div className={`min-h-[220px] max-h-[220px] relative overflow-hidden `}>
                   <img
                     src={card.image}
                     alt={card.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover align-middle"
                   />
-                  <div className="absolute top-4 left-4 bg-secondary px-3 py-1 rounded-full">
-                    <span className="text-xs font-semibold text-white">{card.category}</span>
-                  </div>
+                  <div className="absolute inset-0 bg-primary/40"></div>
                 </div>
-                <div className="flex-1 p-6 flex flex-col justify-center">
-                  <h3 className="text-2xl font-bold font-nunito mb-3 text-gray-800">{card.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{card.description}</p>
-                  <button className="mt-4 text-primary font-semibold text-sm hover:underline self-start">
+                <div className="flex-2 p-6 flex flex-col justify-between mt-10">
+                  <div className="flex flex-col items-center">
+                    <h3 className="text-2xl font-bold font-nunito mb-3 text-gray-800">{card.title}</h3>
+                    <p className="text-gray-600 text-center text-sm leading-relaxed">{card.description}</p>
+                  </div>
+                  <button className="mt-4 text-[#fe5429]  font-semibold text-sm hover:underline self-center">
                     Learn More →
                   </button>
+
                 </div>
               </div>
             </div>
@@ -156,7 +185,7 @@ export default function OurWorkCarousel() {
 
       {/* Indicators */}
       <div className="flex justify-center gap-2 mt-8">
-        {workCards.map((_, index) => (
+        {scrollSnaps.map((_, index) => (
           <button
             key={index}
             onClick={() => emblaApi?.scrollTo(index)}
