@@ -1,4 +1,4 @@
-import { Heart } from "lucide-react";
+import { Handshake, Heart, HeartIcon, HeartOff } from "lucide-react";
 import HeroCarousel from "./components/HeroCarousel";
 import OurWorkCarousel from "./components/OurWorkCarousel";
 
@@ -11,28 +11,28 @@ export default function Home() {
           <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center h-full gap-6 lg:gap-4 px-4 md:px-6 py-8 lg:py-0">
             {/* Left Side */}
             <div className="order-2 lg:order-1 flex-1 flex justify-center flex-col h-full gap-3 lg:gap-3 w-full">
-              <p 
+              <p
                 className="text-secondary text-2xl sm:text-3xl md:text-4xl font-tertiary"
                 data-aos="fade-right"
                 data-aos-delay="100"
               >
                 Help make a difference
               </p>
-              <p 
+              <p
                 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-nunito  font-bold lg:leading-16"
                 data-aos="fade-right"
                 data-aos-delay="200"
               >
                 Together, Let's Create a Caring Society
               </p>
-              <p 
+              <p
                 className="text-gray-200 text-base md:text-lg mt-2 md:mt-4"
                 data-aos="fade-right"
                 data-aos-delay="300"
               >
                 Join our mission to support and uplift the needy. Your donation provides food, shelter, and hope for a better future.
               </p>
-              <div 
+              <div
                 className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 mt-4 md:mt-6 mb-6 md:mb-12"
                 data-aos="fade-up"
                 data-aos-delay="400"
@@ -46,7 +46,7 @@ export default function Home() {
               </div>
             </div>
             {/* Right Side - Auto-sliding Carousel */}
-            <div 
+            <div
               className="order-1 lg:order-2 flex-1 flex items-center justify-center h-full w-full lg:w-auto"
               data-aos="fade-left"
               data-aos-delay="200"
@@ -59,7 +59,7 @@ export default function Home() {
         <div className="w-full px-4 sm:px-6 md:max-w-[90%] lg:max-w-[80%] mx-auto my-8 md:my-12 pb-8 md:pb-12">
           <div className="flex flex-col lg:flex-row justify-around items-center md:items-stretch gap-8 md:gap-4">
             {/* Medical Aid */}
-            <div 
+            <div
               className="flex items-center justify-center lg:justify-start gap-3 md:gap-4 w-full md:w-auto"
               data-aos="fade-up"
               data-aos-delay="100"
@@ -70,12 +70,12 @@ export default function Home() {
                 <p className="text-xs md:text-sm text-gray-600">Essential help for health.</p>
               </div>
             </div>
-            
+
             {/* Divider - Hidden on mobile */}
             <div className="block w-full h-px lg:h-18 lg:w-px bg-gray-300"></div>
-          
+
             {/* Trust Funds */}
-            <div 
+            <div
               className="flex items-center justify-center lg:justify-start gap-3 md:gap-4 w-full md:w-auto"
               data-aos="fade-up"
               data-aos-delay="200"
@@ -86,12 +86,12 @@ export default function Home() {
                 <p className="text-xs md:text-sm text-gray-600">Support those in need.</p>
               </div>
             </div>
-            
+
             {/* Divider - Hidden on mobile */}
             <div className="block w-full h-px lg:h-18 lg:w-px bg-gray-300"></div>
-            
+
             {/* Funds Raised */}
-            <div 
+            <div
               className="flex items-center justify-center lg:justify-start gap-3 md:gap-4 w-full md:w-auto"
               data-aos="fade-up"
               data-aos-delay="300"
@@ -117,6 +117,63 @@ export default function Home() {
         </div>
         <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
           <OurWorkCarousel />
+        </div>
+      </section>
+
+      {/* Donation Section */}
+      <section className="relative">
+        <div className="absolute h-[500px] bg-[#f7f3ef] -z-10 w-[450px]  rounded-r-2xl" ></div>
+        <div className="container mx-auto pt-12 pb-24 px-4">
+          <div className="flex gap-12">
+            <div className="flex-1 flex items-center justify-center">
+              <div className="w-[400px] h-full bg-[#f7f3ef] rounded-2xl overflow-hidden">
+                <img src="./donate_scanner.jpeg" alt="" className="w-[400px] h-full object-cover" />
+              </div>
+            </div>
+            <div className="flex-1 flex flex-col gap-6">
+              <div className="flex flex-col gap-2">
+                <p
+                  className="text-[#fe5429] text-2xl sm:text-3xl md:text-4xl font-tertiary"
+                >
+                  Help make a difference
+                </p>
+                <p
+                  className=" text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-nunito  font-extrabold"
+
+                >
+                  A trusted non-profit charity organization
+                </p>
+
+              </div>
+              <p
+                className="text-gray-800 text-base md:text-lg mt-2 md:mt-4"
+              >
+                Our non-profit charity center is trustworthy as well as to changing the world. Our goal is to create good change in our community by providing assistance to those in need and offering funding.
+              </p>
+              <div className="flex pb-10 border-b">
+                <div className="flex-1 flex align-center justify-center gap-4">
+                  <div className="bg-[#fe5429] shrink-0 w-16 h-16 rounded-3xl flex align-center justify-center rotate-45 p-4">
+                    <img src="./icons/ic_handshake.svg" alt="Donate" className="-rotate-45" />
+                  </div>
+                  <p className="font-extrabold font-nunito text-2xl text-wrap">Be a Hero, Contribute Now</p>
+                </div>
+                <div className="flex-1 flex align-center justify-center gap-4">
+                  <div className="bg-secondary shrink-0 w-16 h-16 rounded-3xl flex align-center justify-center rotate-45 p-4">
+                    <img src="./icons/ic_help_children.svg" alt="Donate" className="-rotate-45" />
+                  </div>
+                  <p className="font-extrabold font-nunito text-2xl text-wrap">Help Children with Donations</p>
+                </div>
+              </div>
+              <ul className="flex flex-col gap-4">
+                <li className="flex items-center gap-2"><img src="./icons/ic_heart.svg" width={24} height={24} alt="" /> Providing essential resources to underserved communities.</li>
+                <li className="flex items-center gap-2"><img src="./icons/ic_heart.svg" width={24} height={24} alt="" /> Offering support through educational and health programs.</li>
+                <li className="flex items-center gap-2"><img src="./icons/ic_heart.svg" width={24} height={24} alt="" /> Facilitating volunteer opportunities for community involvement.</li>
+              </ul>
+              <button className="w-fit bg-[#fe5429] hover:bg-[#cb411e] text-white px-6 py-3 rounded-lg transition-colors cursor-pointer duration-200 text-base md:text-lg font-semibold">
+                Support Now
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </main>

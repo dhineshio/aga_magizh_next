@@ -130,7 +130,7 @@ export default function OurWorkCarousel() {
               key={card.id}
               className="flex-[0_0_100%] sm:flex-[0_0_45%] lg:flex-[0_0_25%] min-w-0"
             >
-              <div className="h-[470px] border-2 border-primary/30 flex flex-col relative rounded-2xl overflow-hidden hover:shadow-2xl shadow-secondary/20 transition-all duration-300 bg-white select-none">
+              <div className="h-[470px] border border-primary flex flex-col relative rounded-2xl overflow-hidden group transition-all duration-300 bg-white select-none">
                 <div className={`absolute top-[48%] z-10 rounded-full left-[50%] p-2 border border-dotted ${card.borderColor} transform -translate-x-1/2 -translate-y-1/2`}>
                 <div className={`rounded-full ${card.bgColor} h-20 w-20 p-5 flex items-center justify-center`}>
                   <img src={card.icon} alt="icon" className="h-full w-full" />
@@ -140,7 +140,7 @@ export default function OurWorkCarousel() {
                   <img
                     src={card.image}
                     alt={card.title}
-                    className="w-full h-full object-cover align-middle"
+                    className="w-full h-full object-cover align-middle group-hover:scale-110 transition-all duration-300"
                   />
                   <div className="absolute inset-0 bg-primary/40"></div>
                 </div>
