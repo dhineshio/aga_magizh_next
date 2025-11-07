@@ -1,4 +1,4 @@
-import { Handshake, Heart, HeartIcon, HeartOff } from "lucide-react";
+import { Handshake, Heart, HeartIcon, HeartOff, PlayIcon } from "lucide-react";
 import HeroCarousel from "./components/HeroCarousel";
 import OurWorkCarousel from "./components/OurWorkCarousel";
 
@@ -125,7 +125,7 @@ export default function Home() {
         <div className="hidden lg:block absolute h-[300px] sm:h-[400px] lg:h-[500px] bg-[#f7f3ef] -z-10 w-full sm:w-[350px] lg:w-[450px] rounded-r-2xl" ></div>
         <div className="container mx-auto lg:pt-12 pb-24 px-4">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-            <div 
+            <div
               className="flex-1 flex items-center justify-center order-2 lg:order-1"
               data-aos="fade-right"
               data-aos-duration="800"
@@ -135,7 +135,7 @@ export default function Home() {
                 <img src="./donate_scanner.jpeg" alt="Donation QR Code" className="w-full h-full object-cover" />
               </div>
             </div>
-            <div 
+            <div
               className="flex-1 flex flex-col gap-4 lg:gap-6 order-1 lg:order-2"
               data-aos="fade-left"
               data-aos-duration="800"
@@ -164,7 +164,7 @@ export default function Home() {
               >
                 Our non-profit charity center is trustworthy as well as to changing the world. Our goal is to create good change in our community by providing assistance to those in need and offering funding.
               </p>
-              <div 
+              <div
                 className="flex flex-col sm:flex-row gap-4 sm:gap-2 pb-6 lg:pb-10 border-b"
                 data-aos="fade-up"
                 data-aos-delay="600"
@@ -182,31 +182,75 @@ export default function Home() {
                   <p className="font-extrabold font-nunito text-base sm:text-xl lg:text-2xl text-left">Help Children with Donations</p>
                 </div>
               </div>
-              <ul 
+              <ul
                 className="flex flex-col gap-3 lg:gap-4"
                 data-aos="fade-up"
                 data-aos-delay="700"
               >
                 <li className="flex items-center gap-2 text-sm sm:text-base">
-                  <img src="./icons/ic_heart.svg" width={20} height={20} className="sm:w-6 sm:h-6" alt="" /> 
+                  <img src="./icons/ic_heart.svg" width={20} height={20} className="sm:w-6 sm:h-6" alt="" />
                   Providing essential resources to underserved communities.
                 </li>
                 <li className="flex items-center gap-2 text-sm sm:text-base">
-                  <img src="./icons/ic_heart.svg" width={20} height={20} className="sm:w-6 sm:h-6" alt="" /> 
+                  <img src="./icons/ic_heart.svg" width={20} height={20} className="sm:w-6 sm:h-6" alt="" />
                   Offering support through educational and health programs.
                 </li>
                 <li className="flex items-center gap-2 text-sm sm:text-base">
-                  <img src="./icons/ic_heart.svg" width={20} height={20} className="sm:w-6 sm:h-6" alt="" /> 
+                  <img src="./icons/ic_heart.svg" width={20} height={20} className="sm:w-6 sm:h-6" alt="" />
                   Facilitating volunteer opportunities for community involvement.
                 </li>
               </ul>
-              <button 
+              <button
                 className="w-full sm:w-fit bg-[#fe5429] hover:bg-[#cb411e] text-white px-6 py-3 rounded-lg transition-colors cursor-pointer duration-200 text-base lg:text-lg font-semibold mt-4"
                 data-aos="fade-up"
                 data-aos-delay="800"
               >
                 Support Now
               </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Help Section */}
+      <section>
+        <div className="relative">
+          <div className="absolute left-30 right-30 z-30 -top-30 bg-secondary h-[250px] rounded-2xl flex overflow-hidden justify-between gap-5 px-18">
+            <div className="flex items-center justify-center h-full">
+              <p className="text-primary font-extrabold font-nunito text-5xl">Help us build a future filled with hope and opportunities</p>
+            </div>
+            <div className="flex items-center justify-center h-full shrink-0">
+              <button className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg transition-colors cursor-pointer duration-200 text-base lg:text-xl font-semibold mt-4">
+                Discover More
+              </button>
+            </div>
+          </div>
+          <div className="h-[80vh] mt-50 relative">
+            <img src="./students_bg.jpg" className="w-full h-full object-cover" alt="" />
+            <div className="absolute inset-0 bg-primary/70"></div>
+            <div className="absolute inset-0 max-w-[1200px] mx-auto z-10 h-full flex flex-col items-center gap-16 justify-center">
+              <div className="w-full flex justify-between pb-16 border-b-2 border-white mt-16">
+                <p className="max-w-[700px] text-white font-extrabold font-nunito text-5xl leading-16 capitalize">Support and contribute to their urgent needs</p>
+                <div className="flex items-center shrink-0 flex-col gap-2">
+                  <div className="p-3 border rounded-full bg-white/20">
+                    <div className="w-18 h-18 bg-white rounded-full p-5">
+                      <PlayIcon className="w-full h-full text-[#fe5429]" />
+                    </div>
+                  </div>
+                  <p className=" font-extrabold font-tertiary italic text-secondary text-3xl">Watch Video</p>
+                </div>
+              </div>
+              <div className="w-full flex items-center justify-between gap-10">
+                <div className="flex items-center gap-5"> 
+                  <img src="./icons/ic_give_logo.svg" alt="" />
+                  <p className="text-white text-2xl font-bold">Every small contribution can create a meaningful change.</p>
+                </div>
+                <div >
+                  <button className="bg-[#fe5429] hover:bg-[#cb411e] text-white px-8 py-4 rounded-lg transition-colors cursor-pointer duration-200 text-base lg:text-xl font-semibold mt-4">
+                    Support Now
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
