@@ -143,24 +143,24 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
       label: 'Our Programs', 
       href: '#',
       submenu: [
-        { label: 'Rescue For Homeless People', href: '#education' },
-        { label: 'Hunger Free Society', href: '#healthcare' },
-        { label: 'Grocery & Essential Support', href: '#community' },
-        { label: 'Education Support', href: '#women' },
-        { label: 'Tree Plantation', href: '#women' },
-        { label: 'Awareness Program', href: '#women' },
+        { label: 'Rescue For Homeless People', href: '/programs/homeless-rescue' },
+        { label: 'Hunger Free Society', href: '/programs/food-distribution' },
+        { label: 'Grocery & Essential Support', href: '/programs/grocery-support' },
+        { label: 'Education Support', href: '/programs/education-support' },
+        { label: 'Tree Plantation', href: '/programs/tree-plantation' },
+        { label: 'Awareness Program', href: '/programs/awareness-programs' },
       ]
     },
     { 
       label: 'Get Involved', 
       href: '#',
       submenu: [
-        { label: 'Volunteer', href: '#volunteer' },
-        { label: 'Donate', href: '#donate' },
-        { label: 'Partnership', href: '#partnership' },
+        { label: 'Volunteer', href: '/volunteer' },
+        { label: 'Donate', href: '/donate' },
+        { label: 'Partnership', href: '/partnership' },
       ]
     },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -273,7 +273,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
                   </li>
                 ))}
               </ul>
-              <button className="inline-flex items-center gap-2 bg-[#fe5429] hover:bg-[#cb411e] text-white px-4 py-3 rounded-lg transition-colors cursor-pointer duration-200">Donate Now</button>
+              <a href="/donate" className="inline-flex items-center gap-2 bg-[#fe5429] hover:bg-[#cb411e] text-white px-4 py-3 rounded-lg transition-colors cursor-pointer duration-200">Donate Now</a>
             </nav>
 
             {/* Mobile Menu Toggle Button */}
@@ -421,9 +421,9 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
                 </li>
               ))}
             </ul>
-            <button className="inline-flex items-center gap-2 bg-[#fe5429] hover:bg-[#cb411e] text-white px-4 py-2 rounded-lg transition-colors cursor-pointer duration-200 text-sm">
+            <a href="/donate" className="inline-flex items-center gap-2 bg-[#fe5429] hover:bg-[#cb411e] text-white px-4 py-2 rounded-lg transition-colors cursor-pointer duration-200 text-sm">
               Donate Now
-            </button>
+            </a>
           </nav>
 
           {/* Mobile Menu Toggle Button */}
@@ -551,22 +551,22 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-secondary transition-colors text-sm">
-                    Our Mission
+                  <a href="/volunteer" className="text-gray-300 hover:text-secondary transition-colors text-sm">
+                    Volunteer
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-secondary transition-colors text-sm">
-                    Annual Reports
+                  <a href="/donate" className="text-gray-300 hover:text-secondary transition-colors text-sm">
+                    Donate
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-secondary transition-colors text-sm">
-                    Success Stories
+                  <a href="/partnership" className="text-gray-300 hover:text-secondary transition-colors text-sm">
+                    Partnership
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-secondary transition-colors text-sm">
+                  <a href="/contact" className="text-gray-300 hover:text-secondary transition-colors text-sm">
                     Contact Us
                   </a>
                 </li>
@@ -578,32 +578,32 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
               <h4 className="text-lg font-semibold text-white">Our Programs</h4>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-secondary transition-colors text-sm">
+                  <a href="/programs/homeless-rescue" className="text-gray-300 hover:text-secondary transition-colors text-sm">
                     Rescue For Homeless People
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-secondary transition-colors text-sm">
+                  <a href="/programs/food-distribution" className="text-gray-300 hover:text-secondary transition-colors text-sm">
                     Hunger Free Society
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-secondary transition-colors text-sm">
+                  <a href="/programs/grocery-support" className="text-gray-300 hover:text-secondary transition-colors text-sm">
                     Grocery & Essential Support
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-secondary transition-colors text-sm">
+                  <a href="/programs/education-support" className="text-gray-300 hover:text-secondary transition-colors text-sm">
                     Education Support
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-secondary transition-colors text-sm">
+                  <a href="/programs/tree-plantation" className="text-gray-300 hover:text-secondary transition-colors text-sm">
                     Tree Plantation
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-secondary transition-colors text-sm">
+                  <a href="/programs/awareness-programs" className="text-gray-300 hover:text-secondary transition-colors text-sm">
                     Awareness Programs
                   </a>
                 </li>
@@ -638,12 +638,12 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
               <div className="pt-4 border-t border-gray-600">
                 <h5 className="text-md font-semibold text-white mb-3">Get Involved</h5>
                 <div className="space-y-2">
-                  <button className="w-full bg-[#fe5429] hover:bg-[#cb411e] text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium">
+                  <a href="/donate" className="block w-full bg-[#fe5429] hover:bg-[#cb411e] text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium text-center">
                     Donate Now
-                  </button>
-                  <button className="w-full bg-secondary hover:bg-secondary/90 text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium">
+                  </a>
+                  <a href="/volunteer" className="block w-full bg-secondary hover:bg-secondary/90 text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium text-center">
                     Become a Volunteer
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

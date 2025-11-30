@@ -25,7 +25,7 @@ export default function AboutPage() {
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              About AGA MAGIZH TRUST
+              About Aga Magizh Trust
             </h1>
             <p
               className="text-lg sm:text-xl lg:text-2xl text-gray-200 max-w-3xl mx-auto"

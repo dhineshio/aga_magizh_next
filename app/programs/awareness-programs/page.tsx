@@ -1,0 +1,278 @@
+'use client';
+
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { Megaphone, Heart, Users, BookOpen, Lightbulb, Target, CheckCircle, HandHeart } from 'lucide-react';
+import Image from 'next/image';
+
+export default function AwarenessProgramsPage() {
+  useEffect(() => {
+    AOS.init({
+      duration: 600,
+      once: false,
+      offset: 100,
+    });
+  }, []);
+
+  const programFeatures = [
+    { icon: Megaphone, title: 'Community Campaigns', description: 'Awareness campaigns on health, hygiene, and social issues' },
+    { icon: BookOpen, title: 'Educational Workshops', description: 'Workshops on rights, responsibilities, and empowerment' },
+    { icon: Lightbulb, title: 'Skill Development', description: 'Training programs for employability and entrepreneurship' },
+    { icon: Users, title: 'Social Advocacy', description: 'Advocating for social justice and community welfare' },
+  ];
+
+  const impactStats = [
+    { number: '100+', label: 'Programs Conducted' },
+    { number: '5,000+', label: 'People Reached' },
+    { number: '20+', label: 'Topics Covered' },
+    { number: '50+', label: 'Villages Visited' },
+  ];
+
+  const topicsCovered = [
+    'Health and hygiene awareness',
+    'Women empowerment and rights',
+    'Child protection and education',
+    'Environmental conservation',
+    'Digital literacy and technology',
+    'Financial literacy and savings',
+    'Government schemes and benefits',
+    'Drug and alcohol abuse prevention',
+    'Mental health awareness',
+    'Career guidance and skill development',
+    'Gender equality and social justice',
+    'Disaster preparedness and safety',
+  ];
+
+  return (
+    <main>
+      {/* Hero Section */}
+      <section className="relative bg-primary py-16 sm:py-20 lg:py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center text-white">
+            <div
+              className="inline-block bg-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              Our Programs
+            </div>
+            <h1
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-nunito mb-4"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              Awareness Programs
+            </h1>
+            <p
+              className="text-lg sm:text-xl lg:text-2xl text-gray-200 max-w-3xl mx-auto"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              Empowering communities through knowledge and education
+            </p>
+            <div
+              className="w-24 h-1 bg-secondary mx-auto mt-6"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Program Overview */}
+      <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div
+              data-aos="fade-right"
+              data-aos-delay="100"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-primary font-nunito mb-6">
+                About This Program
+              </h2>
+              <p className="text-gray-700 text-lg mb-6">
+                Our Awareness Programs are designed to educate and empower communities on critical 
+                social, health, and environmental issues. We believe that knowledge is the first step 
+                towards positive change.
+              </p>
+              <p className="text-gray-700 text-lg mb-6">
+                Through workshops, campaigns, and community engagement, we address various topics 
+                that impact daily life. Our programs are interactive, culturally sensitive, and 
+                tailored to meet the specific needs of each community.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a 
+                  href="/volunteer" 
+                  className="inline-flex items-center justify-center gap-2 bg-[#fe5429] hover:bg-[#cb411e] text-white px-6 py-3 rounded-lg transition-colors font-semibold"
+                >
+                  <Users className="w-5 h-5" />
+                  Volunteer With Us
+                </a>
+                <a 
+                  href="/donate" 
+                  className="inline-flex items-center justify-center gap-2 bg-secondary hover:bg-secondary/90 text-white px-6 py-3 rounded-lg transition-colors font-semibold"
+                >
+                  <Heart className="w-5 h-5" />
+                  Support This Program
+                </a>
+              </div>
+            </div>
+            <div
+              data-aos="fade-left"
+              data-aos-delay="200"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/works/awarness_program.jpeg"
+                  alt="Awareness Programs"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Stats */}
+      <section className="py-16 lg:py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div
+            className="text-center mb-12"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary font-nunito mb-4">
+              Our Impact
+            </h2>
+            <div className="w-24 h-1 bg-secondary mx-auto mt-6"></div>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+            {impactStats.map((stat, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-2xl shadow-lg text-center"
+                data-aos="zoom-in"
+                data-aos-delay={100 + index * 100}
+              >
+                <div className="text-4xl lg:text-5xl font-bold text-[#fe5429] mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-gray-700 font-semibold">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Program Features */}
+      <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-4">
+          <div
+            className="text-center mb-12"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary font-nunito mb-4">
+              Our Approach
+            </h2>
+            <p className="text-gray-700 text-lg max-w-3xl mx-auto">
+              How we create awareness and drive community change
+            </p>
+            <div className="w-24 h-1 bg-secondary mx-auto mt-6"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {programFeatures.map((feature, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow text-center"
+                data-aos="fade-up"
+                data-aos-delay={100 + index * 100}
+              >
+                <div className="bg-[#fe5429] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <feature.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-primary font-nunito mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Topics Covered */}
+      <section className="py-16 lg:py-24 bg-[#f7f3ef]">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div
+              className="text-center mb-12"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-primary font-nunito mb-4">
+                Topics We Cover
+              </h2>
+              <p className="text-gray-700 text-lg">
+                Wide range of awareness programs for community development
+              </p>
+              <div className="w-24 h-1 bg-secondary mx-auto mt-6"></div>
+            </div>
+
+            <div
+              className="bg-white p-8 lg:p-12 rounded-2xl shadow-lg"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {topicsCovered.map((topic, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-[#fe5429] flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700">{topic}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 lg:py-24 bg-primary">
+        <div className="container mx-auto px-4 text-center">
+          <div
+            className="max-w-3xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <HandHeart className="w-16 h-16 text-secondary mx-auto mb-6" />
+            <h2 className="text-3xl lg:text-4xl font-bold text-white font-nunito mb-6">
+              Spread Knowledge, Empower Communities
+            </h2>
+            <p className="text-gray-200 text-lg mb-8">
+              Help us reach more communities with vital information and awareness. 
+              Your support enables us to educate and empower more people.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/donate" className="bg-[#fe5429] hover:bg-[#cb411e] text-white px-8 py-3 rounded-lg transition-colors text-lg font-semibold">
+                Donate Now
+              </a>
+              <a href="/volunteer" className="bg-secondary hover:bg-secondary/90 text-white px-8 py-3 rounded-lg transition-colors text-lg font-semibold">
+                Become a Volunteer
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
